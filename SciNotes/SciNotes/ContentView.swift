@@ -158,7 +158,8 @@ struct ContentView: View {
                            isErasing: isErasing,
                            inkType: currentTool,
                            inkColor: inkColor,
-                           inkWidth: inkWidth)
+                           inkWidth: inkWidth,
+                           viewModel: viewModel) // viewModelを渡す
                 .background(Color.white)
             }
             .navigationTitle(viewModel.notes[viewModel.selectedNoteIndex].title)
@@ -184,15 +185,17 @@ struct DrawingView: UIViewRepresentable {
     var inkColor: Color
     var inkWidth: CGFloat
     
+    // viewModel プロパティを追加
+    @ObservedObject var viewModel: NotesViewModel
+    
     func makeUIView(context: Context) -> PKCanvasView {
         let canvasView = PKCanvasView()
         canvasView.drawing = drawing
         canvasView.tool = getTool()
+        
+        // 非推奨のallowsFingerDrawingを削除し、drawingPolicyだけを使用
         canvasView.drawingPolicy = .anyInput
         canvasView.delegate = context.coordinator
-        
-        // Enable Apple Pencil and finger drawing
-        canvasView.allowsFingerDrawing = true
         
         return canvasView
     }
@@ -235,6 +238,42 @@ struct DrawingView: UIViewRepresentable {
         
         func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
             parent.drawing = canvasView.drawing
+            
+            // 最新のストロークを取得
+            if let latestStroke = canvasView.drawing.strokes.last {
+                // PKStrokePath.interpolatedPoints の正しい使い方
+                let interpolatedPoints = latestStroke.path.interpolatedPoints(by: .distance(5))
+                
+                // ポイント配列に変換して処理
+                let points = Array(interpolatedPoints)
+                
+                if points.count > 0 {
+                    // 最初のポイントを初期値として設定
+                    var topRightPoint = points[0].location
+                    
+                    // 各ポイントを確認して最も右上にある点を見つける
+                    for point in points {
+                        let location = point.location
+                        // x座標が大きく、y座標が小さいほど「右上」の点になる
+                        if location.x > topRightPoint.x && location.y < topRightPoint.y {
+                            topRightPoint = location
+                        } else if location.x > topRightPoint.x {
+                            // x座標が大きければ、とりあえず更新
+                            topRightPoint = location
+                        }
+                    }
+                    
+                    // 親ビューモデルから選択中のノートIDを取得
+                    let noteId = parent.viewModel.notes[parent.viewModel.selectedNoteIndex].id
+                    
+                    // サーバーに座標を送信
+                    APIService.sendCoordinate(
+                        x: topRightPoint.x,
+                        y: topRightPoint.y,
+                        noteId: noteId
+                    )
+                }
+            }
         }
     }
 }
