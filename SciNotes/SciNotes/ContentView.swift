@@ -8,39 +8,9 @@
 import SwiftUI
 import PencilKit
 
-struct NoteData: Identifiable {
-    var id = UUID()
-    var title: String
-    var drawing: PKDrawing = PKDrawing()
-}
-
-class NotesViewModel: ObservableObject {
-    @Published var notes: [NoteData]
-    @Published var selectedNoteIndex: Int
-    
-    init() {
-        self.notes = [NoteData(title: "Note 1")]
-        self.selectedNoteIndex = 0
-    }
-    
-    func addNewNote() {
-        let newNote = NoteData(title: "Note \(notes.count + 1)")
-        notes.append(newNote)
-        selectedNoteIndex = notes.count - 1
-    }
-    
-    func deleteNote(atIndex index: Int) {
-        guard notes.count > 1 else { return }
-        notes.remove(at: index)
-        if selectedNoteIndex >= notes.count {
-            selectedNoteIndex = notes.count - 1
-        }
-    }
-}
-
 struct ContentView: View {
     @Binding var document: SciNotesDocument
-    @StateObject private var viewModel = NotesViewModel()
+    @State private var selectedNoteIndex = 0
     @State private var isErasing: Bool = false
     @State private var inkColor: Color = .black
     @State private var inkWidth: CGFloat = 5.0
@@ -49,16 +19,19 @@ struct ContentView: View {
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(0..<viewModel.notes.count, id: \.self) { index in
+                ForEach(0..<document.notesData.count, id: \.self) { index in
                     HStack {
-                        Text(viewModel.notes[index].title)
-                            .fontWeight(viewModel.selectedNoteIndex == index ? .bold : .regular)
+                        Text(document.notesData[index].title)
+                            .fontWeight(selectedNoteIndex == index ? .bold : .regular)
                         
                         Spacer()
                         
-                        if viewModel.notes.count > 1 {
+                        if document.notesData.count > 1 {
                             Button(action: {
-                                viewModel.deleteNote(atIndex: index)
+                                document.notesData.remove(at: index)
+                                if selectedNoteIndex >= document.notesData.count {
+                                    selectedNoteIndex = document.notesData.count - 1
+                                }
                             }) {
                                 Image(systemName: "trash")
                                     .foregroundColor(.red)
@@ -67,13 +40,15 @@ struct ContentView: View {
                     }
                     .contentShape(Rectangle())
                     .onTapGesture {
-                        viewModel.selectedNoteIndex = index
+                        selectedNoteIndex = index
                     }
                     .padding(.vertical, 4)
                 }
                 
                 Button(action: {
-                    viewModel.addNewNote()
+                    let newNote = NoteData(title: "Note \(document.notesData.count + 1)")
+                    document.notesData.append(newNote)
+                    selectedNoteIndex = document.notesData.count - 1
                 }) {
                     Label("Add New Note", systemImage: "plus")
                 }
@@ -155,24 +130,36 @@ struct ContentView: View {
                 .background(Color.secondary.opacity(0.1))
                 
                 // Drawing Canvas
-                DrawingView(drawing: $viewModel.notes[viewModel.selectedNoteIndex].drawing, 
-                           isErasing: isErasing,
-                           inkType: currentTool,
-                           inkColor: inkColor,
-                           inkWidth: inkWidth,
-                           viewModel: viewModel) // viewModelを渡す
-                .background(Color.white)
+                if document.notesData.indices.contains(selectedNoteIndex) {
+                    DrawingView(
+                        drawing: $document.notesData[selectedNoteIndex].drawing,
+                        isErasing: isErasing,
+                        inkType: currentTool,
+                        inkColor: inkColor,
+                        inkWidth: inkWidth,
+                        noteId: document.notesData[selectedNoteIndex].id
+                    )
+                    .background(Color.white)
+                }
             }
-            .navigationTitle(viewModel.notes[viewModel.selectedNoteIndex].title)
+            .navigationTitle(document.notesData.indices.contains(selectedNoteIndex) ? document.notesData[selectedNoteIndex].title : "")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        // This would typically save or export the drawing
-                        print("Save/Export functionality would go here")
-                    }) {
-                        Image(systemName: "square.and.arrow.up")
+                ToolbarItem(placement: .navigationBarLeading) {
+                    if document.notesData.indices.contains(selectedNoteIndex) {
+                        TextField("ノートタイトル", 
+                                  text: Binding(
+                                    get: { document.notesData[selectedNoteIndex].title },
+                                    set: { document.notesData[selectedNoteIndex].title = $0 }
+                                  ))
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .frame(width: 200)
                     }
+                }
+                
+                // 共有ボタン
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    ShareLink(item: "SciNotes Document", preview: SharePreview("SciNotes Document", image: Image(systemName: "doc")))
                 }
             }
         }
@@ -185,9 +172,7 @@ struct DrawingView: UIViewRepresentable {
     var inkType: PKInkingTool.InkType
     var inkColor: Color
     var inkWidth: CGFloat
-    
-    // viewModel プロパティを追加
-    @ObservedObject var viewModel: NotesViewModel
+    var noteId: UUID
     
     func makeUIView(context: Context) -> PKCanvasView {
         let canvasView = PKCanvasView()
@@ -264,14 +249,11 @@ struct DrawingView: UIViewRepresentable {
                         }
                     }
                     
-                    // 親ビューモデルから選択中のノートIDを取得
-                    let noteId = parent.viewModel.notes[parent.viewModel.selectedNoteIndex].id
-                    
-                    // サーバーに座標を送信
+                    // サーバーに座標を送信（noteIdを直接使用）
                     APIService.sendCoordinate(
                         x: topRightPoint.x,
                         y: topRightPoint.y,
-                        noteId: noteId
+                        noteId: parent.noteId
                     )
                 }
             }
