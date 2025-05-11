@@ -39,7 +39,6 @@ class NotesViewModel: ObservableObject {
 }
 
 struct ContentView: View {
-    @Binding var document: SciNotesDocument
     @StateObject private var viewModel = NotesViewModel()
     @State private var isErasing: Bool = false
     @State private var inkColor: Color = .black
@@ -280,5 +279,5 @@ struct DrawingView: UIViewRepresentable {
 }
 
 #Preview {
-    ContentView(document: .constant(SciNotesDocument()))
+    ContentView()
 }

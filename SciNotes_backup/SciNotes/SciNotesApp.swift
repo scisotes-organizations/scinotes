@@ -7,12 +7,11 @@
 
 import SwiftUI
 
-
 @main
 struct SciNotesApp: App {
     var body: some Scene {
-        DocumentGroup(newDocument: SciNotesDocument()) { file in
-            ContentView(document: file.$document)
+        WindowGroup {
+            ContentView()
         }
     }
 }

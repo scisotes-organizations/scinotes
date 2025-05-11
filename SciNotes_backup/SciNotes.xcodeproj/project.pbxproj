@@ -7,53 +7,40 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		947AD81A2DD10FE4007C00BD /* PBXContainerItemProxy */ = {
+		94ABBA1F2DBD1947009C65E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 947AD8012DD10FE3007C00BD /* Project object */;
+			containerPortal = 94ABBA092DBD1946009C65E7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 947AD8082DD10FE3007C00BD;
+			remoteGlobalIDString = 94ABBA102DBD1946009C65E7;
 			remoteInfo = SciNotes;
 		};
-		947AD8242DD10FE4007C00BD /* PBXContainerItemProxy */ = {
+		94ABBA292DBD1947009C65E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 947AD8012DD10FE3007C00BD /* Project object */;
+			containerPortal = 94ABBA092DBD1946009C65E7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 947AD8082DD10FE3007C00BD;
+			remoteGlobalIDString = 94ABBA102DBD1946009C65E7;
 			remoteInfo = SciNotes;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		947AD8092DD10FE3007C00BD /* SciNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SciNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		947AD8192DD10FE4007C00BD /* SciNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SciNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		947AD8232DD10FE4007C00BD /* SciNotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SciNotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94ABBA112DBD1946009C65E7 /* SciNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SciNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94ABBA1E2DBD1947009C65E7 /* SciNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SciNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94ABBA282DBD1947009C65E7 /* SciNotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SciNotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		947AD82B2DD10FE4007C00BD /* Exceptions for "SciNotes" folder in "SciNotes" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 947AD8082DD10FE3007C00BD /* SciNotes */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		947AD80B2DD10FE3007C00BD /* SciNotes */ = {
+		94ABBA132DBD1946009C65E7 /* SciNotes */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				947AD82B2DD10FE4007C00BD /* Exceptions for "SciNotes" folder in "SciNotes" target */,
-			);
 			path = SciNotes;
 			sourceTree = "<group>";
 		};
-		947AD81C2DD10FE4007C00BD /* SciNotesTests */ = {
+		94ABBA212DBD1947009C65E7 /* SciNotesTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SciNotesTests;
 			sourceTree = "<group>";
 		};
-		947AD8262DD10FE4007C00BD /* SciNotesUITests */ = {
+		94ABBA2B2DBD1947009C65E7 /* SciNotesUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SciNotesUITests;
 			sourceTree = "<group>";
@@ -61,21 +48,21 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		947AD8062DD10FE3007C00BD /* Frameworks */ = {
+		94ABBA0E2DBD1946009C65E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		947AD8162DD10FE4007C00BD /* Frameworks */ = {
+		94ABBA1B2DBD1947009C65E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		947AD8202DD10FE4007C00BD /* Frameworks */ = {
+		94ABBA252DBD1947009C65E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -85,22 +72,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		947AD8002DD10FE3007C00BD = {
+		94ABBA082DBD1946009C65E7 = {
 			isa = PBXGroup;
 			children = (
-				947AD80B2DD10FE3007C00BD /* SciNotes */,
-				947AD81C2DD10FE4007C00BD /* SciNotesTests */,
-				947AD8262DD10FE4007C00BD /* SciNotesUITests */,
-				947AD80A2DD10FE3007C00BD /* Products */,
+				94ABBA132DBD1946009C65E7 /* SciNotes */,
+				94ABBA212DBD1947009C65E7 /* SciNotesTests */,
+				94ABBA2B2DBD1947009C65E7 /* SciNotesUITests */,
+				94ABBA122DBD1946009C65E7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		947AD80A2DD10FE3007C00BD /* Products */ = {
+		94ABBA122DBD1946009C65E7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				947AD8092DD10FE3007C00BD /* SciNotes.app */,
-				947AD8192DD10FE4007C00BD /* SciNotesTests.xctest */,
-				947AD8232DD10FE4007C00BD /* SciNotesUITests.xctest */,
+				94ABBA112DBD1946009C65E7 /* SciNotes.app */,
+				94ABBA1E2DBD1947009C65E7 /* SciNotesTests.xctest */,
+				94ABBA282DBD1947009C65E7 /* SciNotesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,134 +95,134 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		947AD8082DD10FE3007C00BD /* SciNotes */ = {
+		94ABBA102DBD1946009C65E7 /* SciNotes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 947AD82C2DD10FE4007C00BD /* Build configuration list for PBXNativeTarget "SciNotes" */;
+			buildConfigurationList = 94ABBA322DBD1947009C65E7 /* Build configuration list for PBXNativeTarget "SciNotes" */;
 			buildPhases = (
-				947AD8052DD10FE3007C00BD /* Sources */,
-				947AD8062DD10FE3007C00BD /* Frameworks */,
-				947AD8072DD10FE3007C00BD /* Resources */,
+				94ABBA0D2DBD1946009C65E7 /* Sources */,
+				94ABBA0E2DBD1946009C65E7 /* Frameworks */,
+				94ABBA0F2DBD1946009C65E7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				947AD80B2DD10FE3007C00BD /* SciNotes */,
+				94ABBA132DBD1946009C65E7 /* SciNotes */,
 			);
 			name = SciNotes;
 			packageProductDependencies = (
 			);
 			productName = SciNotes;
-			productReference = 947AD8092DD10FE3007C00BD /* SciNotes.app */;
+			productReference = 94ABBA112DBD1946009C65E7 /* SciNotes.app */;
 			productType = "com.apple.product-type.application";
 		};
-		947AD8182DD10FE4007C00BD /* SciNotesTests */ = {
+		94ABBA1D2DBD1947009C65E7 /* SciNotesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 947AD8312DD10FE4007C00BD /* Build configuration list for PBXNativeTarget "SciNotesTests" */;
+			buildConfigurationList = 94ABBA352DBD1947009C65E7 /* Build configuration list for PBXNativeTarget "SciNotesTests" */;
 			buildPhases = (
-				947AD8152DD10FE4007C00BD /* Sources */,
-				947AD8162DD10FE4007C00BD /* Frameworks */,
-				947AD8172DD10FE4007C00BD /* Resources */,
+				94ABBA1A2DBD1947009C65E7 /* Sources */,
+				94ABBA1B2DBD1947009C65E7 /* Frameworks */,
+				94ABBA1C2DBD1947009C65E7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				947AD81B2DD10FE4007C00BD /* PBXTargetDependency */,
+				94ABBA202DBD1947009C65E7 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				947AD81C2DD10FE4007C00BD /* SciNotesTests */,
+				94ABBA212DBD1947009C65E7 /* SciNotesTests */,
 			);
 			name = SciNotesTests;
 			packageProductDependencies = (
 			);
 			productName = SciNotesTests;
-			productReference = 947AD8192DD10FE4007C00BD /* SciNotesTests.xctest */;
+			productReference = 94ABBA1E2DBD1947009C65E7 /* SciNotesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		947AD8222DD10FE4007C00BD /* SciNotesUITests */ = {
+		94ABBA272DBD1947009C65E7 /* SciNotesUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 947AD8342DD10FE4007C00BD /* Build configuration list for PBXNativeTarget "SciNotesUITests" */;
+			buildConfigurationList = 94ABBA382DBD1947009C65E7 /* Build configuration list for PBXNativeTarget "SciNotesUITests" */;
 			buildPhases = (
-				947AD81F2DD10FE4007C00BD /* Sources */,
-				947AD8202DD10FE4007C00BD /* Frameworks */,
-				947AD8212DD10FE4007C00BD /* Resources */,
+				94ABBA242DBD1947009C65E7 /* Sources */,
+				94ABBA252DBD1947009C65E7 /* Frameworks */,
+				94ABBA262DBD1947009C65E7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				947AD8252DD10FE4007C00BD /* PBXTargetDependency */,
+				94ABBA2A2DBD1947009C65E7 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				947AD8262DD10FE4007C00BD /* SciNotesUITests */,
+				94ABBA2B2DBD1947009C65E7 /* SciNotesUITests */,
 			);
 			name = SciNotesUITests;
 			packageProductDependencies = (
 			);
 			productName = SciNotesUITests;
-			productReference = 947AD8232DD10FE4007C00BD /* SciNotesUITests.xctest */;
+			productReference = 94ABBA282DBD1947009C65E7 /* SciNotesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		947AD8012DD10FE3007C00BD /* Project object */ = {
+		94ABBA092DBD1946009C65E7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
-					947AD8082DD10FE3007C00BD = {
+					94ABBA102DBD1946009C65E7 = {
 						CreatedOnToolsVersion = 16.3;
 					};
-					947AD8182DD10FE4007C00BD = {
+					94ABBA1D2DBD1947009C65E7 = {
 						CreatedOnToolsVersion = 16.3;
-						TestTargetID = 947AD8082DD10FE3007C00BD;
+						TestTargetID = 94ABBA102DBD1946009C65E7;
 					};
-					947AD8222DD10FE4007C00BD = {
+					94ABBA272DBD1947009C65E7 = {
 						CreatedOnToolsVersion = 16.3;
-						TestTargetID = 947AD8082DD10FE3007C00BD;
+						TestTargetID = 94ABBA102DBD1946009C65E7;
 					};
 				};
 			};
-			buildConfigurationList = 947AD8042DD10FE3007C00BD /* Build configuration list for PBXProject "SciNotes" */;
+			buildConfigurationList = 94ABBA0C2DBD1946009C65E7 /* Build configuration list for PBXProject "SciNotes" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 947AD8002DD10FE3007C00BD;
+			mainGroup = 94ABBA082DBD1946009C65E7;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 947AD80A2DD10FE3007C00BD /* Products */;
+			productRefGroup = 94ABBA122DBD1946009C65E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				947AD8082DD10FE3007C00BD /* SciNotes */,
-				947AD8182DD10FE4007C00BD /* SciNotesTests */,
-				947AD8222DD10FE4007C00BD /* SciNotesUITests */,
+				94ABBA102DBD1946009C65E7 /* SciNotes */,
+				94ABBA1D2DBD1947009C65E7 /* SciNotesTests */,
+				94ABBA272DBD1947009C65E7 /* SciNotesUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		947AD8072DD10FE3007C00BD /* Resources */ = {
+		94ABBA0F2DBD1946009C65E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		947AD8172DD10FE4007C00BD /* Resources */ = {
+		94ABBA1C2DBD1947009C65E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		947AD8212DD10FE4007C00BD /* Resources */ = {
+		94ABBA262DBD1947009C65E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -245,21 +232,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		947AD8052DD10FE3007C00BD /* Sources */ = {
+		94ABBA0D2DBD1946009C65E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		947AD8152DD10FE4007C00BD /* Sources */ = {
+		94ABBA1A2DBD1947009C65E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		947AD81F2DD10FE4007C00BD /* Sources */ = {
+		94ABBA242DBD1947009C65E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -269,78 +256,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		947AD81B2DD10FE4007C00BD /* PBXTargetDependency */ = {
+		94ABBA202DBD1947009C65E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 947AD8082DD10FE3007C00BD /* SciNotes */;
-			targetProxy = 947AD81A2DD10FE4007C00BD /* PBXContainerItemProxy */;
+			target = 94ABBA102DBD1946009C65E7 /* SciNotes */;
+			targetProxy = 94ABBA1F2DBD1947009C65E7 /* PBXContainerItemProxy */;
 		};
-		947AD8252DD10FE4007C00BD /* PBXTargetDependency */ = {
+		94ABBA2A2DBD1947009C65E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 947AD8082DD10FE3007C00BD /* SciNotes */;
-			targetProxy = 947AD8242DD10FE4007C00BD /* PBXContainerItemProxy */;
+			target = 94ABBA102DBD1946009C65E7 /* SciNotes */;
+			targetProxy = 94ABBA292DBD1947009C65E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		947AD82D2DD10FE4007C00BD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SciNotes/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.takeruito.SciNotes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		947AD82E2DD10FE4007C00BD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SciNotes/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.takeruito.SciNotes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		947AD82F2DD10FE4007C00BD /* Debug */ = {
+		94ABBA302DBD1947009C65E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -403,7 +332,7 @@
 			};
 			name = Debug;
 		};
-		947AD8302DD10FE4007C00BD /* Release */ = {
+		94ABBA312DBD1947009C65E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -459,7 +388,65 @@
 			};
 			name = Release;
 		};
-		947AD8322DD10FE4007C00BD /* Debug */ = {
+		94ABBA332DBD1947009C65E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JM76RYKJ54;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.3.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takeruito.SciNotes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		94ABBA342DBD1947009C65E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JM76RYKJ54;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.3.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takeruito.SciNotes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		94ABBA362DBD1947009C65E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -477,7 +464,7 @@
 			};
 			name = Debug;
 		};
-		947AD8332DD10FE4007C00BD /* Release */ = {
+		94ABBA372DBD1947009C65E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -495,7 +482,7 @@
 			};
 			name = Release;
 		};
-		947AD8352DD10FE4007C00BD /* Debug */ = {
+		94ABBA392DBD1947009C65E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -511,7 +498,7 @@
 			};
 			name = Debug;
 		};
-		947AD8362DD10FE4007C00BD /* Release */ = {
+		94ABBA3A2DBD1947009C65E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -530,43 +517,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		947AD8042DD10FE3007C00BD /* Build configuration list for PBXProject "SciNotes" */ = {
+		94ABBA0C2DBD1946009C65E7 /* Build configuration list for PBXProject "SciNotes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				947AD82F2DD10FE4007C00BD /* Debug */,
-				947AD8302DD10FE4007C00BD /* Release */,
+				94ABBA302DBD1947009C65E7 /* Debug */,
+				94ABBA312DBD1947009C65E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		947AD82C2DD10FE4007C00BD /* Build configuration list for PBXNativeTarget "SciNotes" */ = {
+		94ABBA322DBD1947009C65E7 /* Build configuration list for PBXNativeTarget "SciNotes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				947AD82D2DD10FE4007C00BD /* Debug */,
-				947AD82E2DD10FE4007C00BD /* Release */,
+				94ABBA332DBD1947009C65E7 /* Debug */,
+				94ABBA342DBD1947009C65E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		947AD8312DD10FE4007C00BD /* Build configuration list for PBXNativeTarget "SciNotesTests" */ = {
+		94ABBA352DBD1947009C65E7 /* Build configuration list for PBXNativeTarget "SciNotesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				947AD8322DD10FE4007C00BD /* Debug */,
-				947AD8332DD10FE4007C00BD /* Release */,
+				94ABBA362DBD1947009C65E7 /* Debug */,
+				94ABBA372DBD1947009C65E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		947AD8342DD10FE4007C00BD /* Build configuration list for PBXNativeTarget "SciNotesUITests" */ = {
+		94ABBA382DBD1947009C65E7 /* Build configuration list for PBXNativeTarget "SciNotesUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				947AD8352DD10FE4007C00BD /* Debug */,
-				947AD8362DD10FE4007C00BD /* Release */,
+				94ABBA392DBD1947009C65E7 /* Debug */,
+				94ABBA3A2DBD1947009C65E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 947AD8012DD10FE3007C00BD /* Project object */;
+	rootObject = 94ABBA092DBD1946009C65E7 /* Project object */;
 }
