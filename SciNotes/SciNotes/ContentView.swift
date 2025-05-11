@@ -17,150 +17,119 @@ struct ContentView: View {
     @State private var currentTool: PKInkingTool.InkType = .pen
     
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(0..<document.notesData.count, id: \.self) { index in
-                    HStack {
-                        Text(document.notesData[index].title)
-                            .fontWeight(selectedNoteIndex == index ? .bold : .regular)
-                        
-                        Spacer()
-                        
-                        if document.notesData.count > 1 {
-                            Button(action: {
-                                document.notesData.remove(at: index)
-                                if selectedNoteIndex >= document.notesData.count {
-                                    selectedNoteIndex = document.notesData.count - 1
-                                }
-                            }) {
-                                Image(systemName: "trash")
-                                    .foregroundColor(.red)
-                            }
-                        }
+        VStack(spacing: 0) {
+            // Tool Bar
+            HStack(spacing: 20) {
+                // Pen/Marker/Eraser Tools
+                HStack {
+                    Button(action: {
+                        currentTool = .pen
+                        isErasing = false
+                    }) {
+                        Image(systemName: "pencil.tip")
+                            .font(.system(size: 24))
+                            .padding(8)
+                            .background(currentTool == .pen && !isErasing ? Color.blue.opacity(0.2) : Color.clear)
+                            .cornerRadius(8)
+                            .foregroundColor(currentTool == .pen && !isErasing ? .blue : .primary)
                     }
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        selectedNoteIndex = index
+                    
+                    Button(action: {
+                        currentTool = .marker
+                        isErasing = false
+                    }) {
+                        Image(systemName: "highlighter")
+                            .font(.system(size: 24))
+                            .padding(8)
+                            .background(currentTool == .marker && !isErasing ? Color.blue.opacity(0.2) : Color.clear)
+                            .cornerRadius(8)
+                            .foregroundColor(currentTool == .marker && !isErasing ? .blue : .primary)
                     }
-                    .padding(.vertical, 4)
+                    
+                    Button(action: {
+                        isErasing = true
+                    }) {
+                        Image(systemName: "eraser")
+                            .font(.system(size: 24))
+                            .padding(8)
+                            .background(isErasing ? Color.blue.opacity(0.2) : Color.clear)
+                            .cornerRadius(8)
+                            .foregroundColor(isErasing ? .blue : .primary)
+                    }
                 }
                 
-                Button(action: {
-                    let newNote = NoteData(title: "Note \(document.notesData.count + 1)")
-                    document.notesData.append(newNote)
-                    selectedNoteIndex = document.notesData.count - 1
-                }) {
-                    Label("Add New Note", systemImage: "plus")
-                }
-                .padding(.top)
-            }
-            .navigationTitle("SciNotes")
-        } detail: {
-            VStack(spacing: 0) {
-                // Tool Bar
-                HStack(spacing: 20) {
-                    // Pen/Marker/Eraser Tools
-                    HStack {
-                        Button(action: {
-                            currentTool = .pen
-                            isErasing = false
-                        }) {
-                            Image(systemName: "pencil.tip")
-                                .font(.system(size: 24))
-                                .padding(8)
-                                .background(currentTool == .pen && !isErasing ? Color.blue.opacity(0.2) : Color.clear)
-                                .cornerRadius(8)
-                                .foregroundColor(currentTool == .pen && !isErasing ? .blue : .primary)
-                        }
-                        
-                        Button(action: {
-                            currentTool = .marker
-                            isErasing = false
-                        }) {
-                            Image(systemName: "highlighter")
-                                .font(.system(size: 24))
-                                .padding(8)
-                                .background(currentTool == .marker && !isErasing ? Color.blue.opacity(0.2) : Color.clear)
-                                .cornerRadius(8)
-                                .foregroundColor(currentTool == .marker && !isErasing ? .blue : .primary)
-                        }
-                        
-                        Button(action: {
-                            isErasing = true
-                        }) {
-                            Image(systemName: "eraser")
-                                .font(.system(size: 24))
-                                .padding(8)
-                                .background(isErasing ? Color.blue.opacity(0.2) : Color.clear)
-                                .cornerRadius(8)
-                                .foregroundColor(isErasing ? .blue : .primary)
-                        }
-                    }
-                    
-                    Divider()
-                        .frame(height: 30)
-                    
-                    // Color Picker
-                    ColorPicker("", selection: $inkColor)
-                        .labelsHidden()
+                Divider()
+                    .frame(height: 30)
+                
+                // Color Picker
+                ColorPicker("", selection: $inkColor)
+                    .labelsHidden()
+                    .disabled(isErasing)
+                
+                // Preview of selected color
+                Circle()
+                    .fill(inkColor)
+                    .frame(width: 24, height: 24)
+                    .overlay(Circle().stroke(Color.gray, lineWidth: 1))
+                
+                Divider()
+                    .frame(height: 30)
+                
+                // Width Slider
+                HStack {
+                    Text("Width:")
+                    Slider(value: $inkWidth, in: 1...20, step: 0.5)
+                        .frame(width: 150)
                         .disabled(isErasing)
-                    
-                    // Preview of selected color
-                    Circle()
-                        .fill(inkColor)
-                        .frame(width: 24, height: 24)
-                        .overlay(Circle().stroke(Color.gray, lineWidth: 1))
-                    
-                    Divider()
-                        .frame(height: 30)
-                    
-                    // Width Slider
-                    HStack {
-                        Text("Width:")
-                        Slider(value: $inkWidth, in: 1...20, step: 0.5)
-                            .frame(width: 150)
-                            .disabled(isErasing)
-                        Text(String(format: "%.1f", inkWidth))
-                            .frame(width: 30)
-                    }
-                    
-                    Spacer()
+                    Text(String(format: "%.1f", inkWidth))
+                        .frame(width: 30)
                 }
-                .padding()
-                .background(Color.secondary.opacity(0.1))
                 
-                // Drawing Canvas
-                if document.notesData.indices.contains(selectedNoteIndex) {
-                    DrawingView(
-                        drawing: $document.notesData[selectedNoteIndex].drawing,
-                        isErasing: isErasing,
-                        inkType: currentTool,
-                        inkColor: inkColor,
-                        inkWidth: inkWidth,
-                        noteId: document.notesData[selectedNoteIndex].id
-                    )
-                    .background(Color.white)
+                Spacer()
+                
+                // ノート切り替えボタン - サイドバーの代わりにドロップダウンメニュー
+                Menu {
+                    // ForEach と「新規ノート追加」ボタンを削除
+                    
+                    if document.notesData.count > 1 {
+                        Button(role: .destructive, action: {
+                            document.notesData.remove(at: selectedNoteIndex)
+                            if selectedNoteIndex >= document.notesData.count {
+                                selectedNoteIndex = document.notesData.count - 1
+                            }
+                        }) {
+                            Label("現在のノートを削除", systemImage: "trash")
+                        }
+                    }
+                } label: {
+                    Image(systemName: "ellipsis.circle")
+                        .font(.system(size: 24))
                 }
             }
-            .navigationTitle(document.notesData.indices.contains(selectedNoteIndex) ? document.notesData[selectedNoteIndex].title : "")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    if document.notesData.indices.contains(selectedNoteIndex) {
-                        TextField("ノートタイトル", 
-                                  text: Binding(
-                                    get: { document.notesData[selectedNoteIndex].title },
-                                    set: { document.notesData[selectedNoteIndex].title = $0 }
-                                  ))
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .frame(width: 200)
-                    }
-                }
-                
-                // 共有ボタン
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    ShareLink(item: "SciNotes Document", preview: SharePreview("SciNotes Document", image: Image(systemName: "doc")))
-                }
+            .padding()
+            .background(Color.secondary.opacity(0.1))
+            
+            // Drawing Canvas
+            if document.notesData.indices.contains(selectedNoteIndex) {
+                DrawingView(
+                    drawing: $document.notesData[selectedNoteIndex].drawing,
+                    isErasing: isErasing,
+                    inkType: currentTool,
+                    inkColor: inkColor,
+                    inkWidth: inkWidth,
+                    noteId: document.notesData[selectedNoteIndex].id
+                )
+                .background(Color.white)
+            }
+        }
+        .navigationTitle(document.notesData.indices.contains(selectedNoteIndex) ? document.notesData[selectedNoteIndex].title : "")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            // ノートタイトルのテキストフィールドを削除
+            
+            // 共有ボタン
+            ToolbarItem(placement: .navigationBarTrailing) {
+                ShareLink(item: "SciNotes Document", preview: SharePreview("SciNotes Document", image: Image(systemName: "doc")))
             }
         }
     }
